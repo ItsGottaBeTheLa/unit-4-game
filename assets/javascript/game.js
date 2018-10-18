@@ -37,6 +37,9 @@ $(document).ready(function () {
 
     
     };
+    var currSelectedCharacter;
+    
+
     // console.log(characters);
 
     // This function will render fighters to the page
@@ -59,8 +62,26 @@ $(document).ready(function () {
             }
              
         }
+        if(areaRender === "#selectedCharacter") {
+            renderOne(charObj, areaRender);
+        }
+        if (areaRender === "#enemyCharacter") {
+            for(var i = 0; i < charObj.length; i++) {
+                renderOne(charObj[i], areaRender);
+            }
+        }
+
     }
     renderCharacters(characters, "#characterSection");
+
+    $(document).on("click", ".character", function(){
+        //    console.log("this worked!");
+        var name = $(this).attr("data-name");
+            console.log(name);
+
+     
+    
+    })
 
 
 	
