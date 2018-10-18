@@ -6,6 +6,11 @@ body {
     background-size: cover;
     font-family: 'Gloria Hallelujah', cursive;
 }
+img{
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+}
 .sectionTitle {
     font-size: 35px;
     color: red;
@@ -14,4 +19,24 @@ body {
     font-size: 40px;
     text-align: center;
     color: white;
+}
+.character {
+    display: inline-block;
+    border-style: solid;
+    border-color: red;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.character-image {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.character-name {
+    text-align: center;
+}
+.character-health {
+    text-align: center;
 }
