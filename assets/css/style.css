@@ -1,0 +1,17 @@
+body {
+    background-image: url(../images/ufc-octagon.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.sectionTitle {
+    font-size: 35px;
+    color: red;
+}
+.mainSectionTitle{ 
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
