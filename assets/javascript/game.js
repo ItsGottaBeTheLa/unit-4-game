@@ -38,6 +38,7 @@ $(document).ready(function () {
     
     };
     var currSelectedCharacter;
+    var combatants = [];
     
 
     // console.log(characters);
@@ -77,12 +78,15 @@ $(document).ready(function () {
     $(document).on("click", ".character", function(){
         //    console.log("this worked!");
         var name = $(this).attr("data-name");
-            console.log(name);
+        // console.log(name);
 
-     
-    
-    })
-
-
-	
+        if (!currSelectedCharacter) {
+            for (var key in characters) {
+                if (key !== name) {
+                    combatants.push(characters[key]);
+                }
+            }
+            console.log(combatants);
+        }
+    })	
 });
