@@ -10,8 +10,8 @@ $(document).ready(function () {
 			imageUrl:"assets/images/stpierre.jpg"
 		},
 
-		"Connor McGregor" : {
-			name: "Connor McGregor",
+		"Conor McGregor" : {
+			name: "Conor McGregor",
 			health: 100,
 			attack: 10,
 			enemyAttackBack: 10,
