@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 	var characters = {
 
-		"George St Pierre" : {
+		"George St. Pierre" : {
 			name: "George St. Pierre",
 			health: 120,
 			attack:15,
@@ -10,7 +10,7 @@ $(document).ready(function () {
 			imageUrl:"assets/images/stpierre.jpg"
 		},
 
-		"Conor McGregor" : {
+		"Connor McGregor" : {
 			name: "Connor McGregor",
 			health: 100,
 			attack: 8,
@@ -81,6 +81,7 @@ $(document).ready(function () {
         // console.log(name);
 
         if (!currSelectedCharacter) {
+            currSelectedCharacter = characters[name];
             for (var key in characters) {
                 if (key !== name) {
                     combatants.push(characters[key]);
