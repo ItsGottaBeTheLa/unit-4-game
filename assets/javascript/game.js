@@ -13,8 +13,8 @@ $(document).ready(function () {
 		"Connor McGregor" : {
 			name: "Connor McGregor",
 			health: 100,
-			attack: 8,
-			enemyAttackBack: 8,
+			attack: 10,
+			enemyAttackBack: 10,
 			imageUrl:"assets/images/conor-mcgregor.jpg"
 		},
 
