@@ -65,7 +65,6 @@ $(document).ready(function () {
         }
     };
 
-
     var renderCharacters = function(charObj, areaRender) {
         if (areaRender === "#characterSection") {
             $(areaRender).empty();
@@ -120,6 +119,13 @@ $(document).ready(function () {
         }
 
     };
+    // Restart game function
+    var restartGame = function(inputEndGame) {
+        var restart = $("<button>Restart</button>").click(function() {
+            location.reload();
+        });
+        $("body").append(restart);
+    };
     // Render all Characters to the page when game starts
     renderCharacters(characters, "#characterSection");
     // On click event for selecting character
@@ -155,7 +161,8 @@ $(document).ready(function () {
                 renderCharacters(currDefender, "enemyDefeated");
                 killCount++;
                 if (killCount >=3) {
-                    
+                    restartGame();
+                    $("#attackButton").unbind("click");   
                 }
             }
         }
