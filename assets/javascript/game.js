@@ -151,13 +151,12 @@ $(document).ready(function () {
                 currSelectedCharacter.health -= currDefender.enemyAttackBack;
                 renderCharacters(currSelectedCharacter, "enemyDamage");
             }
-            
-        }
-        else {
-            renderCharacters(currDefender, "enemyDefeated");
-            killCount++;
-            if (killCount >=3) {
-                
+            else {
+                renderCharacters(currDefender, "enemyDefeated");
+                killCount++;
+                if (killCount >=3) {
+                    
+                }
             }
         }
         turnCounter++; 
