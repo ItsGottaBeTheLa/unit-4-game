@@ -123,5 +123,7 @@ $(document).ready(function () {
             renderCharacters(currSelectedCharacter, "#selectedCharacter");
             renderCharacters(combatants, "#enemyCharacter");
         }
-    })	
+    });
+    
+    
 });
