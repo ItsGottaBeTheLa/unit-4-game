@@ -44,7 +44,7 @@ $(document).ready(function () {
     // console.log(characters);
 
     // This function will render fighters to the page
-    var renderOne = function(character, key, renderArea) {
+    var renderOne = function(character, renderArea) {
         var charDiv = $("<div class = 'character' data-name = '" + character.name + "'>");
         var charName = $("<div class = 'character-name'>").text(character.name);
         var charImage = $("<img alt = 'image' class = 'character-image'>").attr("src",character.imageUrl);
@@ -58,12 +58,12 @@ $(document).ready(function () {
             $(areaRender).empty();
             for (var key in charObj) {
                 if(charObj.hasOwnProperty(key)) {
-                    renderOne(charObj[key], key, areaRender);
+                    renderOne(charObj[key], areaRender);
                 }
             }
              
         }
-        if(areaRender === "#selectedCharacter") {
+        if (areaRender === "#selectedCharacter") {
             renderOne(charObj, areaRender);
         }
         if (areaRender === "#enemyCharacter") {
@@ -81,13 +81,17 @@ $(document).ready(function () {
         // console.log(name);
 
         if (!currSelectedCharacter) {
-            currSelectedCharacter = key;
+            currSelectedCharacter = characters[name];
             for (var key in characters) {
                 if (key !== name) {
                     combatants.push(characters[key]);
                 }
             }
-            console.log(combatants);
+            // console.log(combatants);
+            $("#characterSection").hide();
+
+            renderCharacters(currSelectedCharacter, "#selectedCharacter");
+            renderCharacters(combatants, "#enemyCharacter");
         }
     })	
 });
