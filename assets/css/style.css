@@ -40,3 +40,10 @@ img{
 .character-health {
     text-align: center;
 }
+#attackButton {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

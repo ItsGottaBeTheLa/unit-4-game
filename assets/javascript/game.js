@@ -37,9 +37,12 @@ $(document).ready(function () {
 
     
     };
+    //Global Variable Bank
     var currSelectedCharacter;
     var combatants = []
     var currDefender;
+    var turnCounter = 1;
+    var killCount = 0;
     
 
     // console.log(characters);
@@ -101,12 +104,28 @@ $(document).ready(function () {
                 }
             }
         }
+        //Re-render defender when Attacked
+        if (areaRender === "playerDamage") {
+            $("#defender").empty();
+            renderOne(charObj, "#defender", "defender");
+        }
+        //Re-render player character when attacked
+        if (areaRender === "enemyDamage") {
+            $("#selectedCharacter").empty();
+            renderOne(charObj, "#selectedCharacter", "");
+        }
+        //Remove Defeated Enemy
+        if (areaRender === "enemyDefeated") {
+            $("#defender").empty();
+        }
 
     };
+    // Render all Characters to the page when game starts
     renderCharacters(characters, "#characterSection");
-
+    // On click event for selecting character
     $(document).on("click", ".character", function(){
         //    console.log("this worked!");
+        //Saving the clicked characters name
         var name = $(this).attr("data-name");
         // console.log(name);
 
@@ -124,6 +143,23 @@ $(document).ready(function () {
             renderCharacters(combatants, "#enemyCharacter");
         }
     });
-    
-    
+    $("#attackButton").on("click", function() {
+        if($("#defender").children().length !== 0) {
+            currDefender.health -= (currSelectedCharacter.attack * turnCounter);
+            if(currDefender.health > 0) {
+                renderCharacters(currDefender, "playerDamage");
+                currSelectedCharacter.health -= currDefender.enemyAttackBack;
+                renderCharacters(currSelectedCharacter, "enemyDamage");
+            }
+            
+        }
+        else {
+            renderCharacters(currDefender, "enemyDefeated");
+            killCount++;
+            if (killCount >=3) {
+                
+            }
+        }
+        turnCounter++; 
+    });  
 });
