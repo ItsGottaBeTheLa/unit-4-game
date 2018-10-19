@@ -146,7 +146,7 @@ $(document).ready(function () {
     $("#attackButton").on("click", function() {
         if($("#defender").children().length !== 0) {
             currDefender.health -= (currSelectedCharacter.attack * turnCounter);
-            if(currDefender.health > 0) {
+            if(currDefender.health >= 0) {
                 renderCharacters(currDefender, "playerDamage");
                 currSelectedCharacter.health -= currDefender.enemyAttackBack;
                 renderCharacters(currSelectedCharacter, "enemyDamage");
